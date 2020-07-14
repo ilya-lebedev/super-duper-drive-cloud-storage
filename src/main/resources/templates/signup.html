@@ -16,10 +16,10 @@
 
             <h1 class="display-5">Sign Up</h1>
             <form action="#" method="POST">
-                <div class="alert alert-dark">
+                <div class="alert alert-dark" id="alertSuccess">
                     You successfully signed up! Please continue to the <a>login</a> page.
                 </div>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger" id="alertError">
                     <span>Example Signup Error Message</span>
                 </div>
                 <div class="form-row">
@@ -46,7 +46,7 @@
                                placeholder="Enter Password" maxlength="20" required>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary" id="buttonSubmit">Sign Up</button>
             </form>
         </div>
     </body>
