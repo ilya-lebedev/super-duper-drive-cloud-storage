@@ -12,7 +12,7 @@
         <div class="container">
             <div id="logoutDiv">
                 <form action="#" method="POST">
-                    <button type="submit" class="btn btn-secondary float-right">Logout</button>
+                    <button type="submit" id="btn-logout" class="btn btn-secondary float-right">Logout</button>
                 </form>
             </div>
             <div id="contentDiv" style="clear: right;">
@@ -33,13 +33,13 @@
                             <div class="container">
                                 <div class="row" style="margin: 1em;">
                                     <div class="col-sm-2">
-                                        <label for="fileUpload">Upload a New File:</label>
+                                        <label for="inputFileUpload">Upload a New File:</label>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="file" class="form-control-file" id="fileUpload" name="fileUpload">
+                                        <input type="file" class="form-control-file" id="inputFileUpload" name="fileUpload">
                                     </div>
                                     <div class="col-sm-4">
-                                        <button type="submit" class="btn btn-dark">Upload</button>
+                                        <button type="submit" class="btn btn-dark" id="btn-file-upload">Upload</button>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,8 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
-                        <button style="margin: 0.25em;" type="button" class="btn btn-info float-right" onclick="showNoteModal()">
+                        <button style="margin: 0.25em;" type="button" class="btn btn-info float-right"
+                                id="btn-add-new-note" onclick="showNoteModal()">
                             + Add a New Note
                         </button>
 
@@ -105,14 +106,14 @@
                                         <form action="#" method="POST">
                                             <input type="hidden" name="noteId" id="note-id">
                                             <div class="form-group">
-                                                <label for="note-title" class="col-form-label">Title</label>
+                                                <label for="input-note-title" class="col-form-label">Title</label>
                                                 <input type="text" name= "noteTitle" class="form-control"
-                                                       id="note-title" maxlength="20" required>
+                                                       id="input-note-title" maxlength="20" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="note-description" class="col-form-label">Description</label>
+                                                <label for="input-note-description" class="col-form-label">Description</label>
                                                 <textarea class="form-control" name="noteDescription"
-                                                          id="note-description" rows="5" maxlength="1000" required>
+                                                          id="input-note-description" rows="5" maxlength="1000" required>
                                                 </textarea>
                                             </div>
                                             <button id="noteSubmit" type="submit" class="d-none"></button>
@@ -122,7 +123,7 @@
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                             Close
                                         </button>
-                                        <button type="button" class="btn btn-primary"
+                                        <button type="button" class="btn btn-primary" id="btn-save-note-changes"
                                                 onclick="$('#noteSubmit').click();">
                                             Save changes
                                         </button>
@@ -134,7 +135,7 @@
                     <div class="tab-pane fade" id="nav-credentials" role="tabpanel"
                          aria-labelledby="nav-credentials-tab">
                         <button style="margin: 0.25em;" type="button" class="btn btn-info float-right"
-                                onclick="showCredentialModal()">
+                                id="btn-add-new-credential" onclick="showCredentialModal()">
                             + Add a New Credential
                         </button>
 
@@ -176,19 +177,23 @@
                                         <form action="#" method="POST">
                                             <input type="hidden" name="credentialId" id="credential-id">
                                             <div class="form-group">
-                                                <label for="note-title" class="col-form-label">URL</label>
-                                                <input type="text" name= "url" class="form-control" id="credential-url"
-                                                       maxlength="100" required>
+                                                <label for="input-credential-url" class="col-form-label">URL</label>
+                                                <input type="text" name= "url" class="form-control"
+                                                       id="input-credential-url" maxlength="100" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="note-title" class="col-form-label">Username</label>
+                                                <label for="input-credential-username" class="col-form-label">
+                                                    Username
+                                                </label>
                                                 <input type="text" name= "username" class="form-control"
-                                                       id="credential-username" maxlength="30" required>
+                                                       id="input-credential-username" maxlength="30" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="note-title" class="col-form-label">Password</label>
+                                                <label for="input-credential-password" class="col-form-label">
+                                                    Password
+                                                </label>
                                                 <input type="text" name= "password" class="form-control"
-                                                       id="credential-password" maxlength="30" required>
+                                                       id="input-credential-password" maxlength="30" required>
                                             </div>
                                             <button id="credentialSubmit" type="submit" class="d-none"></button>
                                         </form>
@@ -197,7 +202,7 @@
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                             Close
                                         </button>
-                                        <button type="button" class="btn btn-primary"
+                                        <button type="button" class="btn btn-primary" id="btn-save-credential-changes"
                                                 onclick="$('#credentialSubmit').click();">
                                             Save changes
                                         </button>
