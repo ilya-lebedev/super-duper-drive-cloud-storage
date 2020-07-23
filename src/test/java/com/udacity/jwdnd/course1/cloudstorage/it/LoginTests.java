@@ -1,10 +1,11 @@
 package com.udacity.jwdnd.course1.cloudstorage.it;
 
+import com.udacity.jwdnd.course1.cloudstorage.it.helpers.SignupHelper;
 import com.udacity.jwdnd.course1.cloudstorage.it.page_objects.LoginPage;
-import com.udacity.jwdnd.course1.cloudstorage.it.page_objects.SignupPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,6 +24,8 @@ public class LoginTests {
     @LocalServerPort
     private Integer port;
 
+    private boolean isInitialized = false;
+
     @BeforeAll
     public static void beforeAll() {
         WebDriverManager.chromedriver().setup();
@@ -34,12 +37,15 @@ public class LoginTests {
         driver.quit();
     }
 
+    @BeforeEach
+    public void beforeEach() {
+        if (!isInitialized) {
+            SignupHelper.signUp(driver, port, FIRST_NAME, LAST_NAME, USER_NAME, PASSWORD);
+        }
+    }
+
     @Test
     public void loginSuccess() {
-        SignupPage signupPage = new SignupPage(driver);
-        driver.get("http://localhost:" + port + "/signup");
-        signupPage.signup(FIRST_NAME, LAST_NAME, USER_NAME, PASSWORD);
-
         LoginPage loginPage = new LoginPage(driver);
         driver.get("http://localhost:" + port + "/login");
         assertNull(loginPage.getErrorAlert());
