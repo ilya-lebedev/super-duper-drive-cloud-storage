@@ -41,6 +41,7 @@ public class LoginTests {
     public void beforeEach() {
         if (!isInitialized) {
             SignupHelper.signUp(driver, port, FIRST_NAME, LAST_NAME, USER_NAME, PASSWORD);
+            isInitialized = true;
         }
     }
 
