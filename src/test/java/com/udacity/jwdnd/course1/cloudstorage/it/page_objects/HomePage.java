@@ -101,20 +101,23 @@ public class HomePage {
     /* Tabs */
 
     public void openFilesTab() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", navFilesTab);
         WebDriverWait wait = new WebDriverWait(driver,3);
+        wait.until(ExpectedConditions.visibilityOf(navFilesTab));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", navFilesTab);
         wait.until(ExpectedConditions.visibilityOf(fileTable));
     }
 
     public void openNotesTab() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", navNotesTab);
         WebDriverWait wait = new WebDriverWait(driver,3);
+        wait.until(ExpectedConditions.visibilityOf(navNotesTab));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", navNotesTab);
         wait.until(ExpectedConditions.visibilityOf(noteTable));
     }
 
     public void openCredentialsTab() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", navCredentialsTab);
         WebDriverWait wait = new WebDriverWait(driver,3);
+        wait.until(ExpectedConditions.visibilityOf(navCredentialsTab));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", navCredentialsTab);
         wait.until(ExpectedConditions.visibilityOf(credentialTable));
     }
 
