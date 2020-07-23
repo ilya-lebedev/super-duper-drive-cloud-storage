@@ -13,13 +13,10 @@ import org.springframework.boot.web.server.LocalServerPort;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import static com.udacity.jwdnd.course1.cloudstorage.it.data.UserOne.*;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class LoginTests {
-
-    private static String FIRST_NAME = "John";
-    private static String LAST_NAME = "Red";
-    private static String USER_NAME = "jr";
-    private static String PASSWORD = "strong-password";
 
     private static WebDriver driver;
 

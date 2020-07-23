@@ -13,6 +13,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import static com.udacity.jwdnd.course1.cloudstorage.it.data.UserOne.*;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SignupTests {
 
@@ -42,12 +44,8 @@ public class SignupTests {
 
     @Test
     public void signupSuccess() {
-        String firstName = "John";
-        String lastName = "Red";
-        String userName = "jr";
-        String password = "strong-password";
 
-        signupPage.signup(firstName, lastName, userName, password);
+        signupPage.signup(FIRST_NAME, LAST_NAME, USER_NAME, PASSWORD);
 
         assertEquals("http://localhost:" + port + "/signup", driver.getCurrentUrl());
         assertTrue(signupPage.getSuccessAlert().contains("You successfully signed up!"));
