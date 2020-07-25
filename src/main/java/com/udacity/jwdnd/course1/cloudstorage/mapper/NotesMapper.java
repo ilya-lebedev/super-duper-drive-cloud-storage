@@ -20,7 +20,7 @@ public interface NotesMapper {
     Integer insert(Note note);
 
     @Update("UPDATE notes SET notetitle = @{noteTitle}, notedescription = #{noteDescription} WHERE noteid = #{noteId}")
-    void update(Note note);
+    int update(Note note);
 
     @Delete("DELETE FROM notes WHERE noteid = @{noteId}")
     void delete(Integer noteId);
