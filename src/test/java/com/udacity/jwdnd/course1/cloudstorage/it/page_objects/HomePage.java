@@ -251,6 +251,7 @@ public class HomePage {
             if (tr.getText().contains(itemName)) {
                 WebElement button = tr.findElement(By.className(buttonClass));
                 ((JavascriptExecutor)driver).executeScript("arguments[0].click();", button);
+                break;
             }
         }
     }
