@@ -114,7 +114,7 @@ public class NotesTests {
         driver.get("http://localhost:" + port);
         homePage.openNotesTab();
 
-        assertFalse(homePage.isNoteInList(EDITED_NOTE_TITLE));
+        assertFalse(homePage.isNoteInList(SECOND_NOTE_TITLE));
     }
 
 }
