@@ -13,7 +13,7 @@ public class CredentialConverter {
         credential.setCredentialId(credentialForm.getId());
         credential.setUrl(credentialForm.getUrl());
         credential.setUsername(credentialForm.getUsername());
-        credential.setPassword(credentialForm.getPassword());
+        credential.setDecryptedPassword(credentialForm.getPassword());
 
         return credential;
     }
