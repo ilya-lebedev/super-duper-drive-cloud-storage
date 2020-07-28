@@ -1,9 +1,9 @@
 package com.udacity.jwdnd.course1.cloudstorage.controller;
 
-import com.udacity.jwdnd.course1.cloudstorage.helpers.ResultAttributesHelper;
+import com.udacity.jwdnd.course1.cloudstorage.helper.ResultAttributesHelper;
 import com.udacity.jwdnd.course1.cloudstorage.model.CredentialForm;
 import com.udacity.jwdnd.course1.cloudstorage.model.User;
-import com.udacity.jwdnd.course1.cloudstorage.services.CredentialsService;
+import com.udacity.jwdnd.course1.cloudstorage.service.CredentialsService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

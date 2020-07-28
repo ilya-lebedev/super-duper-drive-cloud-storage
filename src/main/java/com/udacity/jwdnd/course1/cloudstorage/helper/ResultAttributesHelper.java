@@ -1,4 +1,4 @@
-package com.udacity.jwdnd.course1.cloudstorage.helpers;
+package com.udacity.jwdnd.course1.cloudstorage.helper;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
