@@ -19,7 +19,7 @@ public interface FilesMapper {
 
     @Insert("INSERT INTO files (filename, contenttype, filesize, userid, filedata) " +
             "VALUES (#{fileName}, #{contentType}, #{fileSize}, #{userId}, #{fileData})")
-    @Options(useGeneratedKeys = true, keyProperty = "noteId")
+    @Options(useGeneratedKeys = true, keyProperty = "fileId")
     Integer insert(File file);
 
     @Delete("DELETE FROM files WHERE fileId = #{fileId}")
