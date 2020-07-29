@@ -10,11 +10,14 @@ public class LoginPage {
 
     private WebDriver driver;
 
+    @FindBy(id = "alertSignupSuccess")
+    private WebElement alertSignupSuccess;
+
     @FindBy(id = "alertError")
     private WebElement alertError;
 
-    @FindBy(id = "alertSuccess")
-    private WebElement alertSuccess;
+    @FindBy(id="alertLogout")
+    private WebElement alertLogout;
 
     @FindBy(id = "inputUsername")
     private WebElement inputUsername;
@@ -36,9 +39,9 @@ public class LoginPage {
         buttonSubmit.submit();
     }
 
-    public String getSuccessAlert() {
-        if (driver.findElements(By.id("alertSuccess")).size() > 0) {
-            return alertSuccess.getText();
+    public String getSignupSuccessAlert() {
+        if (driver.findElements(By.id("alertSignupSuccess")).size() > 0) {
+            return alertSignupSuccess.getText();
         } else {
             return null;
         }
@@ -47,6 +50,14 @@ public class LoginPage {
     public String getErrorAlert() {
         if (driver.findElements(By.id("alertError")).size() > 0) {
             return alertError.getText();
+        } else {
+            return null;
+        }
+    }
+
+    public String getLogoutAlert() {
+        if (driver.findElements(By.id("alertLogout")).size() > 0) {
+            return alertLogout.getText();
         } else {
             return null;
         }

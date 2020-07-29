@@ -10,9 +10,6 @@ public class SignupPage {
 
     private WebDriver driver;
 
-    @FindBy(id = "alertSuccess")
-    private WebElement alertSuccess;
-
     @FindBy(id = "alertError")
     private WebElement alertError;
 
@@ -42,14 +39,6 @@ public class SignupPage {
         inputUserName.sendKeys(userName);
         inputPassword.sendKeys(password);
         buttonSubmit.submit();
-    }
-
-    public String getSuccessAlert() {
-        if (driver.findElements(By.id("alertSuccess")).size() > 0) {
-            return alertSuccess.getText();
-        } else {
-            return null;
-        }
     }
 
     public String getErrorAlert() {

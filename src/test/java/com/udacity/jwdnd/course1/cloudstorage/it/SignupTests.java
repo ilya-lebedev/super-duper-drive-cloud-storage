@@ -1,16 +1,14 @@
 package com.udacity.jwdnd.course1.cloudstorage.it;
 
+import com.udacity.jwdnd.course1.cloudstorage.it.page_objects.LoginPage;
 import com.udacity.jwdnd.course1.cloudstorage.it.page_objects.SignupPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
@@ -50,9 +48,11 @@ public class SignupTests {
 
         signupPage.signup(FIRST_NAME, LAST_NAME, "signup_user", PASSWORD);
 
-        assertEquals("http://localhost:" + port + "/signup", driver.getCurrentUrl());
-        assertTrue(signupPage.getSuccessAlert().contains("You successfully signed up!"));
-        assertNull(signupPage.getErrorAlert());
+        assertEquals("http://localhost:" + port + "/login", driver.getCurrentUrl());
+
+        LoginPage loginPage = new LoginPage(driver);
+
+        assertTrue(loginPage.getSignupSuccessAlert().contains("You successfully signed up!"));
     }
 
 }

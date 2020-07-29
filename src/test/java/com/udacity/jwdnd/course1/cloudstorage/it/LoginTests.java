@@ -49,8 +49,10 @@ public class LoginTests {
     public void loginSuccess() {
         LoginPage loginPage = new LoginPage(driver);
         driver.get("http://localhost:" + port + "/login");
+
+        assertNull(loginPage.getSignupSuccessAlert());
         assertNull(loginPage.getErrorAlert());
-        assertNull(loginPage.getSuccessAlert());
+        assertNull(loginPage.getLogoutAlert());
 
         loginPage.login(USER_NAME, PASSWORD);
 
