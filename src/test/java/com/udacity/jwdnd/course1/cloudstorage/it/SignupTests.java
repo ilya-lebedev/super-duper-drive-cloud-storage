@@ -6,8 +6,11 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
@@ -45,7 +48,7 @@ public class SignupTests {
     @Test
     public void signupSuccess() {
 
-        signupPage.signup(FIRST_NAME, LAST_NAME, USER_NAME, PASSWORD);
+        signupPage.signup(FIRST_NAME, LAST_NAME, "signup_user", PASSWORD);
 
         assertEquals("http://localhost:" + port + "/signup", driver.getCurrentUrl());
         assertTrue(signupPage.getSuccessAlert().contains("You successfully signed up!"));
