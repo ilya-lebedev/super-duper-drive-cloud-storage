@@ -186,7 +186,7 @@ followed the links below:
 - [Hash Function](https://en.wikipedia.org/wiki/Hash_function)
 - [Encryption](https://en.wikipedia.org/wiki/Encryption)
 
-##Conclusion
+## Conclusion
 
 The entire Super*Duper*Drive team wished me good luck with the project.
 With their great help I finished the project successfully.
